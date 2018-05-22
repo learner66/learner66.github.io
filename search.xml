@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[flask-web的思维导图]]></title>
-    <url>%2F2018%2F05%2F22%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[简单展示flask-web的框架，后面会用详细的文章来阐述这幅图。 Quick Start]]></content>
-  </entry>
-  <entry>
     <title><![CDATA[git学习（二）]]></title>
     <url>%2F2018%2F05%2F22%2Fgit-learning-2%2F</url>
     <content type="text"></content>
@@ -14,5 +9,10 @@
     <title><![CDATA[git学习（一）]]></title>
     <url>%2F2018%2F05%2F22%2Fgit-learning-1%2F</url>
     <content type="text"><![CDATA[git是什么 git是一种版本控制工具，它的诞生是因为linux日益增长，代码合依靠手工已经非常吃力。一开始linux也是用的其他的版本控制工具，但是后来提供版本控制的公司不再向linux社区提供支持，原因是因为这些大神太有创造性了，要修改他们的代码…balabala。最后linux的核心人物linus带领自己的小伙伴自己编写了一个版本控制工具：git.大神是怎么炼成的，心中充满了羡慕。 git能做什么 之前也没用到版本控制工具，只是在上一个项目中接触一点。但是也没系统的学习，刚好又要用到版本控制工具，就详细的学习一下。这么牛的东西不学习一下，怎么装x呢。 其实以前自己一个人做项目没有什么感受，但是几个人共同完成一个项目，问题就会层出不穷。比如jar包版本不同啊，这个可以通过项目管理工具maven来解决，什么是maven，有时间另写一遍来介绍它。还有一个比较大的问题，就是几个人的文件如何保持一直，一开始大家都是同一个文件没什么问题。但是任务一开始就是完全不同的场景了，A开始写他的功能，B开始写他的测试，C开始写他的页面。最后如何让大家的文件汇总起来呢，总不能一直复制粘帖吧，这样的效率是惨不忍睹的。git或者其他的版本控制工具可以帮助我们解决这个问题，具体怎么解决，一步一步学习吧。 git怎么用git的安装 在ubuntu环境： 1sudo apt-get install git 查看是否安装成功： 12git --versiongit version 2.7.4 git初次尝试 先创建一个文件夹作为git的工作目录， 1mkdir demo 什么意思呢?其实这个工作目录在git中有个专门的名称，叫做仓库，英文repository.它的意思这个目录下的所有文件都可以被git管理，每个的创建，修改，删除，git都能知道。git记录这些事情的发生，所以它也可以追踪到在整个文件的历史，并且它可以使某个文件回到某个历史节点。 刚刚只是创建了一个目录，还没有和git取得关联，这时候git并不能管理整个文件夹。 使用以下命令： 12cd demogit init 初始化空的 Git 仓库于 /home/xxx/workplace/demo/.git/ 这时候demo目录就变成了git可以管理的仓库了。 现在仓库下创建一个文件 touch readme.txt 在该文件里写入以下内容： 1234Git is a version control tool.Git is so nice.使用：git add readme.txt 可以将修改后的文件提交到暂存区内。12345位于分支 master初始提交要提交的变更： （使用 &quot;git rm --cached &lt;文件&gt;...&quot; 以取消暂存） 新文件： readme.txt 使用： 1git commit -m &quot;readme.txt&quot; 可以将暂存区的内容都提交到本地仓库中。（根提交） 435eb64] readme.txt12 1 file changed, 2 insertions(+)create mode 100644 readme.txt git的魔法–穿越时空 在表演git的魔法之前，我们先为文件做一个时间线，这样对一个文件才能完成穿越时空的操作。 1.在readme.txt中写入 1this is first add someting to readme.txt 然后输入命令 12git add readme.txtgit commit -m &apos;first add&apos; 2.在readme.txt中写入 1this is second add someting to readme.txt 然后输入命令 12git add readme.txtgit commit -m &apos;second add&apos; 使用git log 来查看历史线。1234567891011121314151617 commit fac4c988c2e9dc06074355cd137b51319ed65a7fAuthor: learner66 &lt;2952184251@qq.com&gt;Date: Tue May 22 19:01:07 2018 +0800 second addcommit b1c5887736de9909de4643ddd06a84b70ab50394Author: learner66 &lt;2952184251@qq.com&gt;Date: Tue May 22 19:00:17 2018 +0800 first addcommit 435eb64ac7e2b5f0d2f8153d940fc1d2ff92b89bAuthor: learner66 &lt;2952184251@qq.com&gt;Date: Tue May 22 18:50:46 2018 +0800 readme.txt readme.txt1234Git is a version control tool.Git is so nice.this is first add something to readme.this is second add something to readme. 穿越到过去 已经知道了这条历史线，git可以任意的穿越到过去的某个时间点。 回到过去有两种方法 git reset –hard HEAD^HEAD代表当前时间，HEAD^代表上一个时间点，HEAD~100代表西现在到过去的第一百个时间点。 git reset –hard blc588blc588代表commit id。 使用第二条命令的效果： 123456xxx:~/workplace/demo$ sudo git reset --hard b1c588HEAD 现在位于 b1c5887 first addxxx:~/workplace/demo$ cat readme.txtGit is a version control tool.Git is so nice.this is first add something to readme. 回到未来 这个只能使用commit id来进行操作，如果不知道commit id,可以试用gitreflog来查看。123456789101112xxx:~/workplace/demo$ git reflogb1c5887 HEAD@&#123;0&#125;: reset: moving to b1c588fac4c98 HEAD@&#123;1&#125;: commit: second addb1c5887 HEAD@&#123;2&#125;: commit: first add435eb64 HEAD@&#123;3&#125;: commit (initial): readme.txtxxx:~/workplace/demo$ sudo git reset --hard fac4c98HEAD 现在位于 fac4c98 second addxxx:~/workplace/demo$ cat readme.txtGit is a version control tool.Git is so nice.this is first add something to readme.this is second add something to readme.]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[flask-web的思维导图]]></title>
+    <url>%2F2018%2F05%2F20%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[简单展示flask-web的框架，后面会用详细的文章来阐述这幅图。 Quick Start]]></content>
   </entry>
 </search>
