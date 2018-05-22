@@ -343,7 +343,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-05-22T17:28:16+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-05-22T17:29:39+08:00">
                 2018-05-22
               </time>
             
@@ -413,8 +413,8 @@
             <h2 id="git是什么"><a href="#git是什么" class="headerlink" title="git是什么"></a>git是什么</h2><p>  git是一种版本控制工具，它的诞生是因为linux日益增长，代码合依靠手工已经非常吃力。一开始linux<br>也是用的其他的版本控制工具，但是后来提供版本控制的公司不再向linux社区提供支持，原因是因为这些大<br>神太有创造性了，要修改他们的代码…balabala。最后linux的核心人物linus带领自己的小伙伴自己编<br>写了一个版本控制工具：git.大神是怎么炼成的，心中充满了羡慕。</p>
 <h2 id="git能做什么"><a href="#git能做什么" class="headerlink" title="git能做什么"></a>git能做什么</h2><p>  之前也没用到版本控制工具，只是在上一个项目中接触一点。但是也没系统的学习，刚好又要用到版本控制<br>工具，就详细的学习一下。这么牛的东西不学习一下，怎么装x呢。<br>  其实以前自己一个人做项目没有什么感受，但是几个人共同完成一个项目，问题就会层出不穷。比如jar包<br>版本不同啊，这个可以通过项目管理工具maven来解决，什么是maven，有时间另写一遍来介绍它。还有一个<br>比较大的问题，就是几个人的文件如何保持一直，一开始大家都是同一个文件没什么问题。但是任务一开始就<br>是完全不同的场景了，A开始写他的功能，B开始写他的测试，C开始写他的页面。最后如何让大家的文件汇总<br>起来呢，总不能一直复制粘帖吧，这样的效率是惨不忍睹的。git或者其他的版本控制工具可以帮助我们解决<br>这个问题，具体怎么解决，一步一步学习吧。</p>
 <h2 id="git怎么用"><a href="#git怎么用" class="headerlink" title="git怎么用"></a>git怎么用</h2><h3 id="git的安装"><a href="#git的安装" class="headerlink" title="git的安装"></a>git的安装</h3><p>  在ubuntu环境：<br>    sudo apt-get install git<br>  查看是否安装成功：<br>    git –version<br>    git version 2.7.4</p>
-<h3 id="git初次尝试"><a href="#git初次尝试" class="headerlink" title="git初次尝试"></a>git初次尝试</h3><p>  先创建一个文件夹作为git的工作目录，<br>    mkdir demo<br>  什么意思呢?其实这个工作目录在git中有个专门的名称，叫做仓库，英文repository.它的意思这个目录<br>  下的所有文件都可以被git管理，每个的创建，修改，删除，git都能知道。git记录这些事情的发生，所</p>
-<h2 id="以它也可以追踪到在整个文件的历史，并且它可以使某个文件回到某个历史节点。"><a href="#以它也可以追踪到在整个文件的历史，并且它可以使某个文件回到某个历史节点。" class="headerlink" title="  以它也可以追踪到在整个文件的历史，并且它可以使某个文件回到某个历史节点。"></a>  以它也可以追踪到在整个文件的历史，并且它可以使某个文件回到某个历史节点。</h2><p>  刚刚只是创建了一个目录，还没有和git取得关联，这时候git并不能管理整个文件夹。<br>  使用以下命令：<br>    cd demo<br>    git init<br>    初始化空的 Git 仓库于 /home/xxx/workplace/demo/.git/<br>  这时候demo目录就变成了git可以管理的仓库了。</p>
+<h3 id="git初次尝试"><a href="#git初次尝试" class="headerlink" title="git初次尝试"></a>git初次尝试</h3><p>  先创建一个文件夹作为git的工作目录，<br>    mkdir demo<br>  什么意思呢?其实这个工作目录在git中有个专门的名称，叫做仓库，英文repository.它的意思这个目录<br>  下的所有文件都可以被git管理，每个的创建，修改，删除，git都能知道。git记录这些事情的发生，所<br>  以它也可以追踪到在整个文件的历史，并且它可以使某个文件回到某个历史节点。</p>
+<p>  刚刚只是创建了一个目录，还没有和git取得关联，这时候git并不能管理整个文件夹。<br>  使用以下命令：<br>    cd demo<br>    git init<br>    初始化空的 Git 仓库于 /home/xxx/workplace/demo/.git/<br>  这时候demo目录就变成了git可以管理的仓库了。</p>
 
           
         
