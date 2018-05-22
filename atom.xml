@@ -5,9 +5,9 @@
   <subtitle>启航，探索未知之地</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
-  <updated>2018-05-22T11:11:48.179Z</updated>
-  <id>http://yoursite.com/</id>
+  <link href="https://learner66.github.io/"/>
+  <updated>2018-05-22T11:16:39.830Z</updated>
+  <id>https://learner66.github.io/</id>
   
   <author>
     <name>learner66</name>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>git学习</title>
-    <link href="http://yoursite.com/2018/05/22/git-learning/"/>
-    <id>http://yoursite.com/2018/05/22/git-learning/</id>
+    <title>git学习(1)</title>
+    <link href="https://learner66.github.io/2018/05/22/git-learning/"/>
+    <id>https://learner66.github.io/2018/05/22/git-learning/</id>
     <published>2018-05-22T08:48:18.000Z</published>
-    <updated>2018-05-22T11:11:48.179Z</updated>
+    <updated>2018-05-22T11:16:39.830Z</updated>
     
     <summary type="html">
     
@@ -37,8 +37,8 @@
   
   <entry>
     <title>flask-web的思维导图</title>
-    <link href="http://yoursite.com/2018/05/21/hello-world/"/>
-    <id>http://yoursite.com/2018/05/21/hello-world/</id>
+    <link href="https://learner66.github.io/2018/05/21/hello-world/"/>
+    <id>https://learner66.github.io/2018/05/21/hello-world/</id>
     <published>2018-05-21T09:40:21.421Z</published>
     <updated>2018-05-21T09:40:21.385Z</updated>
     
