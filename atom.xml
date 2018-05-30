@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://learner66.github.io/"/>
-  <updated>2018-05-30T07:07:42.792Z</updated>
+  <updated>2018-05-30T11:45:00.578Z</updated>
   <id>https://learner66.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>操作系统-进程</title>
+    <link href="https://learner66.github.io/2018/05/30/os-process/"/>
+    <id>https://learner66.github.io/2018/05/30/os-process/</id>
+    <published>2018-05-30T07:45:53.000Z</published>
+    <updated>2018-05-30T11:45:00.578Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;进程&quot;&gt;&lt;a href=&quot;#进程&quot; class=&quot;headerlink&quot; title=&quot;进程&quot;&gt;&lt;/a&gt;进程&lt;/h2&gt;&lt;p&gt;进程是正在执行程序的实例，包括程序计算机，寄存器和变量。&lt;/p&gt;
+&lt;p&gt;从概念上说，每个进程都有自己的虚拟CPU，当然，实际的CPU是在进程
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>git学习（二）</title>
