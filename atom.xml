@@ -40,14 +40,20 @@
     <link href="https://learner66.github.io/2018/05/30/os-process/"/>
     <id>https://learner66.github.io/2018/05/30/os-process/</id>
     <published>2018-05-30T07:45:53.000Z</published>
-    <updated>2018-06-01T06:29:14.297Z</updated>
+    <updated>2018-06-01T06:30:56.759Z</updated>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;进程&quot;&gt;&lt;a href=&quot;#进程&quot; class=&quot;headerlink&quot; title=&quot;进程&quot;&gt;&lt;/a&gt;进程&lt;/h2&gt;&lt;p&gt;进程是正在执行程序的实例，包括程序计算机，寄存器和变量。&lt;/p&gt;
-&lt;p&gt;从概念上说，每个进程都有自己的虚拟CPU，当然，实际的CPU是在进程
+        &lt;pre&gt;
+## 进程
+进程是正在执行程序的实例，包括程序计算机，寄存器和变量。
+
+从概念上说，每个进程都有自己的虚拟CPU，当然，实际的CPU是在进程之间来回切换。
+
+实际上，只有一个物理程序计数器，所以在每个程序运行时，它的逻辑程序计数器被
+装入到实际的程序计数器中。当该程序
       
     
     </summary>
