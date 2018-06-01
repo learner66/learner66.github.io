@@ -18,6 +18,9 @@
       <categories>
         <category>操作系统</category>
       </categories>
+      <tags>
+        <tag>-操作系统 -进程 -线程</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[git学习（二）]]></title>
@@ -26,6 +29,9 @@
       <categories>
         <category>git</category>
       </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[git学习（一）]]></title>
@@ -34,6 +40,9 @@
       <categories>
         <category>git</category>
       </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[flask-web的思维导图]]></title>
