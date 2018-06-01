@@ -88,18 +88,18 @@
 
 
 
-<meta name="description" content="进程进程是正在执行程序的实例，包括程序计算机，寄存器和变量。 从概念上说，每个进程都有自己的虚拟CPU，当然，实际的CPU是在进程之间来回切换。 实际上，只有一个物理程序计数器，所以个在每个程序运行时，它的逻辑程序计数器被装入到实际的程序计数器中。当该程序执行结束（暂停）时，物理程序计数器被装入到逻辑程序计数器中。 守护进程unix中，可以通过一个系统调用来创建新进程：fork。这个系统调用会创建">
+<meta name="description" content="进程进程是正在执行程序的实例，包括程序计算机，寄存器和变量。 从概念上说，每个进程都有自己的虚拟CPU，当然，实际的CPU是在进程之间来回切换。 实际上，只有一个物理程序计数器，所以在每个程序运行时，它的逻辑程序计数器被装入到实际的程序计数器中。当该程序执行结束（暂停）时，物理程序计数器被装入到逻辑程序计数器中。 守护进程unix中，可以通过一个系统调用来创建新进程：fork。这个系统调用会创建一">
 <meta name="keywords" content="learner66, java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="操作系统-进程">
 <meta property="og:url" content="https://learner66.github.io/2018/05/30/os-process/index.html">
 <meta property="og:site_name" content="learner66的探索空间">
-<meta property="og:description" content="进程进程是正在执行程序的实例，包括程序计算机，寄存器和变量。 从概念上说，每个进程都有自己的虚拟CPU，当然，实际的CPU是在进程之间来回切换。 实际上，只有一个物理程序计数器，所以个在每个程序运行时，它的逻辑程序计数器被装入到实际的程序计数器中。当该程序执行结束（暂停）时，物理程序计数器被装入到逻辑程序计数器中。 守护进程unix中，可以通过一个系统调用来创建新进程：fork。这个系统调用会创建">
+<meta property="og:description" content="进程进程是正在执行程序的实例，包括程序计算机，寄存器和变量。 从概念上说，每个进程都有自己的虚拟CPU，当然，实际的CPU是在进程之间来回切换。 实际上，只有一个物理程序计数器，所以在每个程序运行时，它的逻辑程序计数器被装入到实际的程序计数器中。当该程序执行结束（暂停）时，物理程序计数器被装入到逻辑程序计数器中。 守护进程unix中，可以通过一个系统调用来创建新进程：fork。这个系统调用会创建一">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-30T11:45:00.578Z">
+<meta property="og:updated_time" content="2018-06-01T06:15:29.116Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="操作系统-进程">
-<meta name="twitter:description" content="进程进程是正在执行程序的实例，包括程序计算机，寄存器和变量。 从概念上说，每个进程都有自己的虚拟CPU，当然，实际的CPU是在进程之间来回切换。 实际上，只有一个物理程序计数器，所以个在每个程序运行时，它的逻辑程序计数器被装入到实际的程序计数器中。当该程序执行结束（暂停）时，物理程序计数器被装入到逻辑程序计数器中。 守护进程unix中，可以通过一个系统调用来创建新进程：fork。这个系统调用会创建">
+<meta name="twitter:description" content="进程进程是正在执行程序的实例，包括程序计算机，寄存器和变量。 从概念上说，每个进程都有自己的虚拟CPU，当然，实际的CPU是在进程之间来回切换。 实际上，只有一个物理程序计数器，所以在每个程序运行时，它的逻辑程序计数器被装入到实际的程序计数器中。当该程序执行结束（暂停）时，物理程序计数器被装入到逻辑程序计数器中。 守护进程unix中，可以通过一个系统调用来创建新进程：fork。这个系统调用会创建一">
 
 
 
@@ -341,8 +341,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-05-30T19:45:00+08:00">
-                2018-05-30
+              <time title="更新于" itemprop="dateModified" datetime="2018-06-01T14:15:29+08:00">
+                2018-06-01
               </time>
             
           </span>
@@ -369,7 +369,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,142
+                  2,652
                 </span>
               
 
@@ -385,7 +385,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5
+                  10
                 </span>
               
             </div>
@@ -408,11 +408,12 @@
       
         <h2 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h2><p>进程是正在执行程序的实例，包括程序计算机，寄存器和变量。</p>
 <p>从概念上说，每个进程都有自己的虚拟CPU，当然，实际的CPU是在进程之间来回切换。</p>
-<p>实际上，只有一个物理程序计数器，所以个在每个程序运行时，它的逻辑程序计数器被<br>装入到实际的程序计数器中。当该程序执行结束（暂停）时，物理程序计数器被装入到<br>逻辑程序计数器中。</p>
+<p>实际上，只有一个物理程序计数器，所以在每个程序运行时，它的逻辑程序计数器被<br>装入到实际的程序计数器中。当该程序执行结束（暂停）时，物理程序计数器被装入到<br>逻辑程序计数器中。</p>
 <h2 id="守护进程"><a href="#守护进程" class="headerlink" title="守护进程"></a>守护进程</h2><p>unix中，可以通过一个系统调用来创建新进程：fork。这个系统调用会创建一个与调<br>用进程相同的副本。在调用fork后，这两个进程（父进程和子进程）拥有相同的内存映像<br>，同样的环境字符串和同样的打开文件</p>
 <h2 id="写时复制："><a href="#写时复制：" class="headerlink" title="写时复制："></a>写时复制：</h2><h2 id="进程的状态："><a href="#进程的状态：" class="headerlink" title="进程的状态："></a>进程的状态：</h2><p>  运行：cpu和条件都满足<br>  阻塞：cpu满足，必要条件不满足<br>  就绪：cpu不满足，必要条件满足</p>
+<h2 id="进程控制块（PCB）–进程存在的唯一标志"><a href="#进程控制块（PCB）–进程存在的唯一标志" class="headerlink" title="进程控制块（PCB）–进程存在的唯一标志"></a>进程控制块（PCB）–进程存在的唯一标志</h2><p>  PCB记录了操作系统所需的、用于描述进程的当前情况以及控制进程运行的全部信息。<br>操作系统是根据PCB对进程进行控制和管理的。<br>（1）当OS要调度某进程执行时，要从该进程的PCB中查出其现行状态及优先级。<br>（2）调度到某进程后，根据其PCB中所保存的处理机状态信息，设置该进程恢复运行<br>的现场，并根据PCB中的程序和数据的内存始址，找到其程序和数据。<br>（3）进程载执行过程中，与其他进程的通信，同步都需要用到PCB<br>（4）当进程切换时，处理机环境也保存在PCB中</p>
 <h2 id="进程的实现："><a href="#进程的实现：" class="headerlink" title="进程的实现："></a>进程的实现：</h2><p>  有了进程模型，进程应该如何实现<br>  为了实现进程模型，操作系统维护者一张（一个数据结构），即进程表。每个进程占用<br>  一个进程表项。该表项包含了进程状态的重要信息，包括程序计数器、堆栈指针，内存<br>  分配状况、所打开文件的状态、帐号和调度信息，以及其他在进程进行状态转换时所必<br>  须保存的信息，从而保证该进程随后能再次启动，就像从未被中断过一样。</p>
-<h2 id="中断向量"><a href="#中断向量" class="headerlink" title="中断向量"></a>中断向量</h2><p>单个CPU如何维护多个顺序进程<br>假设当一个磁盘中断发生时，用户进程正在运行，则中断硬件将程序计数器，程序状态字、<br>有时还有一个或多个寄存器压入堆栈，计算机随即跳转到中断向量所指示的地址。这些是<br>硬件完成的所有操作，然后软件，特别是中断服务例程就接管了一切剩余的工作。</p>
+<h2 id="中断向量在进程切换中的重要作用"><a href="#中断向量在进程切换中的重要作用" class="headerlink" title="中断向量在进程切换中的重要作用"></a>中断向量在进程切换中的重要作用</h2><p>单个CPU如何维护多个顺序进程<br>假设当一个磁盘中断发生时，用户进程正在运行，则中断硬件将程序计数器，程序状态字、<br>有时还有一个或多个寄存器压入堆栈，计算机随即跳转到中断向量所指示的地址。这些是<br>硬件完成的所有操作，然后软件，特别是中断服务例程就接管了一切剩余的工作。</p>
 <h2 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h2><p>为什么需要多线程<br>1.有了多线程，并行实体拥有共享同一个地址空间和所有可有数据的能力。<br>2.线程比进程更轻量级。<br>3.IO密集的处理，使用多线程效率更高。</p>
 <p>线程概念试图实现的是，共享一组资源的多个进程的执行能力，以便这些线程可以为完成某<br>一个任务而共同工作。</p>
 <p>进程：<br>用某种方法将相关的资源集中在一起。进程有存放程序正文和数据以及其他的资源的地址空间。<br>这些资源包括打开的文件，子进程，即将发生的定时器、信号处理程序、帐号信息等。<br>线程：CPU调度的单位</p>
@@ -420,6 +421,13 @@
 <h3 id="POSIX线程"><a href="#POSIX线程" class="headerlink" title="POSIX线程"></a>POSIX线程</h3><p>为了实现可移植的线程程序，IEEE定义了线程的标准。它定义的线程包叫作pthread.大部分<br>UNIX系统都支持该标准。<br>pthread_create 创建一个新的线程<br>pthread_exit 结束调用的线程<br>pthread_join 等待一个特定的线程退出<br>pthread_yield 释放CPU来运行另外一个线程<br>pthread_attr_init 创建并初始化一个线程的属性结构<br>pthread_attr_destroy 删除一个线程的属性结构</p>
 <p>代码演示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;pthread.h&gt;</span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;stdlib.h&gt;</span><br><span class="line"></span><br><span class="line">#define NUMBER_OF_THREADS 10</span><br><span class="line"></span><br><span class="line">void *print_hello_world(void *tid)</span><br><span class="line">&#123;</span><br><span class="line">	printf(&quot;hello world,Greeting form thread %d\n&quot;, tid);</span><br><span class="line">	pthread_exit(NULL);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main(int args,char *argv[])</span><br><span class="line">&#123;</span><br><span class="line">	pthread_t threads[NUMBER_OF_THREADS];</span><br><span class="line">	int status,i;</span><br><span class="line">	for(i=0;i&lt;NUMBER_OF_THREADS; i++)&#123;</span><br><span class="line">		printf(&quot;main here,creating thread %d\n&quot;,i);</span><br><span class="line">		status = pthread_create(&amp;threads[i],NULL,print_hello_world,(void*)i);</span><br><span class="line">		if(status!=0)&#123;</span><br><span class="line">			printf(&quot;oops,pthread_create returned error code %d\n&quot;, status);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	exit(NULL);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>output:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">main here,creating thread 0</span><br><span class="line">main here,creating thread 1</span><br><span class="line">hello world,Greeting form thread 0</span><br><span class="line">hello world,Greeting form thread 1</span><br><span class="line">main here,creating thread 2</span><br><span class="line">main here,creating thread 3</span><br><span class="line">hello world,Greeting form thread 2</span><br><span class="line">main here,creating thread 4</span><br><span class="line">hello world,Greeting form thread 3</span><br><span class="line">main here,creating thread 5</span><br><span class="line">hello world,Greeting form thread 4</span><br><span class="line">main here,creating thread 6</span><br><span class="line">hello world,Greeting form thread 5</span><br><span class="line">main here,creating thread 7</span><br><span class="line">hello world,Greeting form thread 6</span><br><span class="line">main here,creating thread 8</span><br><span class="line">hello world,Greeting form thread 7</span><br><span class="line">main here,creating thread 9</span><br><span class="line">hello world,Greeting form thread 8</span><br><span class="line">hello world,Greeting form thread 9</span><br></pre></td></tr></table></figure></p>
+<h2 id="线程的实现方式"><a href="#线程的实现方式" class="headerlink" title="线程的实现方式"></a>线程的实现方式</h2><p>  线程已经在许多系统中实现了，但各系统的实现方式并不完全相同。在有的系统中所实现<br>的是用户级线程（ULT），而另一些系统所实现的是内核支持线程（KST），还有的系统是<br>混合实现。</p>
+<h3 id="什么是用户级线程"><a href="#什么是用户级线程" class="headerlink" title="什么是用户级线程"></a>什么是用户级线程</h3><p>  用户级线程仅存在于用户空间中，对于这种线程的创建、撤销、线程之间的同步与通信<br>等功能，同无需利用系统调用来实现。对于用户级线程的切换，也无须内核的支持。对于<br>设置用户级线程的系统，其调度仍是以进程为单位进行的，内核完全不知道用户级线程的<br>存在。<br>  在用户空间管理线程时，每个进程都需要有其专用的线程表，用来跟踪该进程中的线程。<br>线程表和进程表相似，不过它记录的仅仅是各个线程的属性，比如每个线程的程序计数器、<br>堆栈指针、寄存器和状态等。该线程表由运行时系统管理。</p>
+<h3 id="什么是内核支持线程"><a href="#什么是内核支持线程" class="headerlink" title="什么是内核支持线程"></a>什么是内核支持线程</h3><p>  对于通常的进程，无论是系统进程还是用户进程，进程的创建、撤销、以及要求由系统<br>设备完成的I/O操作，都是利用系统调用而进入内核，再由内核中的相应处理程序予以完成。<br>进程的切换同样是在内核的支持下实现的。不论什么进程，它们都是在操作系统内核的支持<br>下运行的，是与内核紧密相关的。<br>  这里所谓的内核支持线程KST（kernel supported threads）,也都同样是在内核的<br>支持下运行的，即无论是用户进程中的线程，还是系统进程中的线程，他们的创建、撤销和<br>切换等也是依靠内核，在内核空间实现的。此外，在内核空间还为每一个内核支持线程设置<br>了一个线程控制块，内核是根据该控制块而感知某线程的存在，并对其加以控制。<br>  内核支持线程有以下的优点：<br>  （1）内核中拥有每个线程的线程控制块，那么内核就可以使用调度算法来调度进程中多个<br>线程并发执行。<br>  （2）如果进程中的一个线程被阻塞了，内核可以调度该进程中的其他线程占用处理器运行，<br>也可以运行其他进程中的线程。<br>  （3）内核支持线程具有很小的数据结构和堆栈，线程的切换比较快，切换开销小。<br>  （4）内核本身也可以采用多线程技术，可以提高系统的执行速度和效率。<br>内核线程的缺点也很明显，对于用户线程的切换，要从用户态进行到内核态。</p>
+<h3 id="线程切换"><a href="#线程切换" class="headerlink" title="线程切换"></a>线程切换</h3><p><a href="https://blog.csdn.net/codeTZ/article/details/51244684" target="_blank" rel="noopener">线程切换</a></p>
+<h3 id="用户级线程为什么要和内核级线程进行映射，映射的模型"><a href="#用户级线程为什么要和内核级线程进行映射，映射的模型" class="headerlink" title="用户级线程为什么要和内核级线程进行映射，映射的模型"></a>用户级线程为什么要和内核级线程进行映射，映射的模型</h3><h2 id="线程的实现"><a href="#线程的实现" class="headerlink" title="线程的实现"></a>线程的实现</h2><p>  不论是进程还是线程，都必须直接或间接地取得内核的支持。由于内核支持线程可以<br>直接利用系统调用为它服务，故线程的控制相当简单；而用户级线程必须借助于某种形式<br>的中间系统的帮助方能取得内核的服务，故在对线程的控制上要稍复杂些。</p>
+<h3 id="内核支持线程的实现"><a href="#内核支持线程的实现" class="headerlink" title="内核支持线程的实现"></a>内核支持线程的实现</h3><p>  在仅设置了内核支持线程的OS中，一个可能的线程控制方法是，系统在创建一个新进程<br>时，便为它分配一个任务数据区PTDA（per task data area），其中包括若干线程控<br>制块TCB空间。在每一个TCB中可保存线程标识符，优先级，线程运行的CPU状态等信息。<br>虽然这些信息与用户线程TCB中的信息相同，但现在却是被保存在内核空间中。<br>  每当进程要创建一个线程时，便为新线程分配一个TCB，将有关信息填入该TCB中，并<br>为之分配必要的资源，如为线程分配数百至数千的栈空间和局部变量存储区。</p>
+<h3 id="用户级线程的实现"><a href="#用户级线程的实现" class="headerlink" title="用户级线程的实现"></a>用户级线程的实现</h3><p>  用户级线程是在用户空间实现的。所有的用户级线程都具有相同的结构，它们都运行在<br>一个中间系统的上面。当前有两种方式实现的中间系统，即运行时系统和内核控制线程。<br>（1）所谓“运行时系统”，实质上是用于管理和控制线程的函数（过程）的集合，其中包括<br>用于创建和撤销线程的函数、线程同步和通信的函数以及实现线程调度的函数等。正因为<br>有这些函数，才能使得用户线程和内核无关。运行时系统中的所有函数都驻留载用户空间，<br>并<font color="#ff0000" size="3">作为用户级线程和内核之间的接口</font>.</p>
 
       
     </div>
@@ -440,7 +448,7 @@
   <p><span>本文标题:</span>操作系统-进程</a></p>
   <p><span>文章作者:</span>learner66</a></p>
   <p><span>发布时间:</span>2018年05月30日 - 15:45:53</p>
-  <p><span>最后更新:</span>2018年05月30日 - 19:45:00</p>
+  <p><span>最后更新:</span>2018年06月01日 - 14:15:29</p>
   <p><span>原始链接:</span><a href="/2018/05/30/os-process/" title="操作系统-进程">https://learner66.github.io/2018/05/30/os-process/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://learner66.github.io/2018/05/30/os-process/"  aria-label="复制成功！"></i></span>
   </p>
@@ -522,6 +530,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2018/06/01/os-process-1/" rel="prev" title="操作系统的主要功能呢个">
+                操作系统的主要功能呢个 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -601,7 +613,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -645,7 +657,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#进程"><span class="nav-number">1.</span> <span class="nav-text">进程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#守护进程"><span class="nav-number">2.</span> <span class="nav-text">守护进程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写时复制："><span class="nav-number">3.</span> <span class="nav-text">写时复制：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程的状态："><span class="nav-number">4.</span> <span class="nav-text">进程的状态：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程的实现："><span class="nav-number">5.</span> <span class="nav-text">进程的实现：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#中断向量"><span class="nav-number">6.</span> <span class="nav-text">中断向量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程"><span class="nav-number">7.</span> <span class="nav-text">线程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#线程堆栈"><span class="nav-number">7.1.</span> <span class="nav-text">线程堆栈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线程的问题"><span class="nav-number">7.2.</span> <span class="nav-text">线程的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#POSIX线程"><span class="nav-number">7.3.</span> <span class="nav-text">POSIX线程</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#进程"><span class="nav-number">1.</span> <span class="nav-text">进程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#守护进程"><span class="nav-number">2.</span> <span class="nav-text">守护进程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写时复制："><span class="nav-number">3.</span> <span class="nav-text">写时复制：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程的状态："><span class="nav-number">4.</span> <span class="nav-text">进程的状态：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程控制块（PCB）–进程存在的唯一标志"><span class="nav-number">5.</span> <span class="nav-text">进程控制块（PCB）–进程存在的唯一标志</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程的实现："><span class="nav-number">6.</span> <span class="nav-text">进程的实现：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#中断向量在进程切换中的重要作用"><span class="nav-number">7.</span> <span class="nav-text">中断向量在进程切换中的重要作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程"><span class="nav-number">8.</span> <span class="nav-text">线程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#线程堆栈"><span class="nav-number">8.1.</span> <span class="nav-text">线程堆栈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线程的问题"><span class="nav-number">8.2.</span> <span class="nav-text">线程的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#POSIX线程"><span class="nav-number">8.3.</span> <span class="nav-text">POSIX线程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程的实现方式"><span class="nav-number">9.</span> <span class="nav-text">线程的实现方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是用户级线程"><span class="nav-number">9.1.</span> <span class="nav-text">什么是用户级线程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是内核支持线程"><span class="nav-number">9.2.</span> <span class="nav-text">什么是内核支持线程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线程切换"><span class="nav-number">9.3.</span> <span class="nav-text">线程切换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户级线程为什么要和内核级线程进行映射，映射的模型"><span class="nav-number">9.4.</span> <span class="nav-text">用户级线程为什么要和内核级线程进行映射，映射的模型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程的实现"><span class="nav-number">10.</span> <span class="nav-text">线程的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内核支持线程的实现"><span class="nav-number">10.1.</span> <span class="nav-text">内核支持线程的实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户级线程的实现"><span class="nav-number">10.2.</span> <span class="nav-text">用户级线程的实现</span></a></li></ol></li></ol></div>
             
 
           </div>

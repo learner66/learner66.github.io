@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://learner66.github.io/"/>
-  <updated>2018-05-30T11:45:00.578Z</updated>
+  <updated>2018-06-01T06:07:59.649Z</updated>
   <id>https://learner66.github.io/</id>
   
   <author>
@@ -17,11 +17,30 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>操作系统的主要功能呢个</title>
+    <link href="https://learner66.github.io/2018/06/01/os-process-1/"/>
+    <id>https://learner66.github.io/2018/06/01/os-process-1/</id>
+    <published>2018-06-01T02:20:56.000Z</published>
+    <updated>2018-06-01T06:07:59.649Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;处理机管理功能&quot;&gt;&lt;a href=&quot;#处理机管理功能&quot; class=&quot;headerlink&quot; title=&quot;处理机管理功能&quot;&gt;&lt;/a&gt;处理机管理功能&lt;/h2&gt;&lt;p&gt;  在传统的多道程序系统中，处理机的分配和运行都是以进程为基本单位，因而对处理机的&lt;br&gt;管理可归结
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>操作系统-进程</title>
     <link href="https://learner66.github.io/2018/05/30/os-process/"/>
     <id>https://learner66.github.io/2018/05/30/os-process/</id>
     <published>2018-05-30T07:45:53.000Z</published>
-    <updated>2018-05-30T11:45:00.578Z</updated>
+    <updated>2018-06-01T06:15:29.116Z</updated>
     
     <summary type="html">
     
