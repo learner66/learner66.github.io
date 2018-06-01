@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://learner66.github.io/"/>
-  <updated>2018-06-01T07:22:07.967Z</updated>
+  <updated>2018-06-01T07:29:14.660Z</updated>
   <id>https://learner66.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://learner66.github.io/2018/06/01/os-process-1/"/>
     <id>https://learner66.github.io/2018/06/01/os-process-1/</id>
     <published>2018-06-01T02:20:56.000Z</published>
-    <updated>2018-06-01T07:22:07.967Z</updated>
+    <updated>2018-06-01T07:29:14.660Z</updated>
     
     <summary type="html">
     
@@ -31,6 +31,8 @@
       
     
     </summary>
+    
+      <category term="操作系统" scheme="https://learner66.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
     
       <category term="操作系统" scheme="https://learner66.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
@@ -42,7 +44,7 @@
     <link href="https://learner66.github.io/2018/05/30/os-process/"/>
     <id>https://learner66.github.io/2018/05/30/os-process/</id>
     <published>2018-05-30T07:45:53.000Z</published>
-    <updated>2018-06-01T07:27:55.358Z</updated>
+    <updated>2018-06-01T07:29:13.320Z</updated>
     
     <summary type="html">
     
@@ -54,6 +56,8 @@
     
     </summary>
     
+      <category term="操作系统" scheme="https://learner66.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
     
   </entry>
   
@@ -62,7 +66,7 @@
     <link href="https://learner66.github.io/2018/05/22/git-learning-2/"/>
     <id>https://learner66.github.io/2018/05/22/git-learning-2/</id>
     <published>2018-05-22T11:29:06.000Z</published>
-    <updated>2018-06-01T07:22:06.503Z</updated>
+    <updated>2018-06-01T07:29:16.104Z</updated>
     
     <summary type="html">
     
@@ -73,6 +77,8 @@
     
     </summary>
     
+      <category term="git" scheme="https://learner66.github.io/categories/git/"/>
+    
     
   </entry>
   
@@ -81,7 +87,7 @@
     <link href="https://learner66.github.io/2018/05/22/git-learning-1/"/>
     <id>https://learner66.github.io/2018/05/22/git-learning-1/</id>
     <published>2018-05-22T08:48:18.000Z</published>
-    <updated>2018-05-30T02:26:59.231Z</updated>
+    <updated>2018-06-01T07:29:17.436Z</updated>
     
     <summary type="html">
     
@@ -92,6 +98,8 @@
     
     </summary>
     
+      <category term="git" scheme="https://learner66.github.io/categories/git/"/>
+    
     
   </entry>
   
@@ -100,7 +108,7 @@
     <link href="https://learner66.github.io/2018/05/20/flask-web/"/>
     <id>https://learner66.github.io/2018/05/20/flask-web/</id>
     <published>2018-05-20T11:29:06.000Z</published>
-    <updated>2018-06-01T07:20:33.239Z</updated>
+    <updated>2018-06-01T07:29:11.472Z</updated>
     
     <summary type="html">
     
@@ -111,6 +119,8 @@
       
     
     </summary>
+    
+      <category term="flask-web" scheme="https://learner66.github.io/categories/flask-web/"/>
     
     
   </entry>
