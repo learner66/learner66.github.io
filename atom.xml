@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://learner66.github.io/"/>
-  <updated>2018-06-01T12:05:18.889Z</updated>
+  <updated>2018-07-09T10:24:31.173Z</updated>
   <id>https://learner66.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>java对象</title>
+    <link href="https://learner66.github.io/2018/06/01/java-object/"/>
+    <id>https://learner66.github.io/2018/06/01/java-object/</id>
+    <published>2018-06-01T12:03:02.000Z</published>
+    <updated>2018-07-09T10:24:31.173Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;进程通信&quot;&gt;&lt;a href=&quot;#进程通信&quot; class=&quot;headerlink&quot; title=&quot;进程通信&quot;&gt;&lt;/a&gt;进程通信&lt;/h2&gt;&lt;p&gt;（1）一个进程如何把信息传递给另一个&lt;br&gt;（2）两个或多个进程的活动不会交叉&lt;br&gt;（3）正确的顺序&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="操作系统" scheme="https://learner66.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+    
+      <category term="操作系统" scheme="https://learner66.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+      <category term="进程通信" scheme="https://learner66.github.io/tags/%E8%BF%9B%E7%A8%8B%E9%80%9A%E4%BF%A1/"/>
+    
+  </entry>
   
   <entry>
     <title>操作系统-进程通信</title>

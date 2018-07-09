@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="git," />
+  <meta name="keywords" content="操作系统,进程通信," />
 
 
 
@@ -88,18 +88,18 @@
 
 
 
-<meta name="description" content="工作区和暂存区  git设计中有一些概念，了解这些概念对于深入学习git有很大的帮助。其中就有工作区和暂存区。 工作区  工作区就是创建的工作目录，这个目录下的所有文件都需要在git的管理之下。文件的创建，修改，删除都会被git记录。 暂存区  另外一个就是.git。这个称为版本库。版本库里存了很多东西，其中一个就是暂存区，所有的修改只有在提交到暂存区，才能被commit。12345678910位">
-<meta name="keywords" content="git">
+<meta name="description" content="进程通信（1）一个进程如何把信息传递给另一个（2）两个或多个进程的活动不会交叉（3）正确的顺序">
+<meta name="keywords" content="操作系统,进程通信">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git学习（二）">
-<meta property="og:url" content="https://learner66.github.io/2018/05/22/git-learning-2/index.html">
+<meta property="og:title" content="java对象">
+<meta property="og:url" content="https://learner66.github.io/2018/06/01/java-object/index.html">
 <meta property="og:site_name" content="learner66的探索空间">
-<meta property="og:description" content="工作区和暂存区  git设计中有一些概念，了解这些概念对于深入学习git有很大的帮助。其中就有工作区和暂存区。 工作区  工作区就是创建的工作目录，这个目录下的所有文件都需要在git的管理之下。文件的创建，修改，删除都会被git记录。 暂存区  另外一个就是.git。这个称为版本库。版本库里存了很多东西，其中一个就是暂存区，所有的修改只有在提交到暂存区，才能被commit。12345678910位">
+<meta property="og:description" content="进程通信（1）一个进程如何把信息传递给另一个（2）两个或多个进程的活动不会交叉（3）正确的顺序">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-01T07:40:49.623Z">
+<meta property="og:updated_time" content="2018-07-09T10:24:31.173Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git学习（二）">
-<meta name="twitter:description" content="工作区和暂存区  git设计中有一些概念，了解这些概念对于深入学习git有很大的帮助。其中就有工作区和暂存区。 工作区  工作区就是创建的工作目录，这个目录下的所有文件都需要在git的管理之下。文件的创建，修改，删除都会被git记录。 暂存区  另外一个就是.git。这个称为版本库。版本库里存了很多东西，其中一个就是暂存区，所有的修改只有在提交到暂存区，才能被commit。12345678910位">
+<meta name="twitter:title" content="java对象">
+<meta name="twitter:description" content="进程通信（1）一个进程如何把信息传递给另一个（2）两个或多个进程的活动不会交叉（3）正确的顺序">
 
 
 
@@ -129,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="https://learner66.github.io/2018/05/22/git-learning-2/"/>
+  <link rel="canonical" href="https://learner66.github.io/2018/06/01/java-object/"/>
 
 
 
 
 
-  <title>git学习（二） | learner66的探索空间</title>
+  <title>java对象 | learner66的探索空间</title>
   
 
 
@@ -296,7 +296,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://learner66.github.io/2018/05/22/git-learning-2/">
+    <link itemprop="mainEntityOfPage" href="https://learner66.github.io/2018/06/01/java-object/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="learner66">
@@ -313,7 +313,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">git学习（二）</h1>
+          <h1 class="post-title" itemprop="name headline">java对象</h1>
         
 
         <div class="post-meta">
@@ -325,8 +325,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-22T19:29:06+08:00">
-                2018-05-22
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-01T20:03:02+08:00">
+                2018-06-01
               </time>
             
 
@@ -341,8 +341,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-06-01T15:40:49+08:00">
-                2018-06-01
+              <time title="更新于" itemprop="dateModified" datetime="2018-07-09T18:24:31+08:00">
+                2018-07-09
               </time>
             
           </span>
@@ -360,8 +360,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/git/" itemprop="url" rel="index">
-                    <span itemprop="name">git</span>
+                  <a href="/categories/操作系统/" itemprop="url" rel="index">
+                    <span itemprop="name">操作系统</span>
                   </a>
                 </span>
 
@@ -391,7 +391,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  906
+                  41
                 </span>
               
 
@@ -407,7 +407,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  1
                 </span>
               
             </div>
@@ -428,19 +428,7 @@
       
 
       
-        <h2 id="工作区和暂存区"><a href="#工作区和暂存区" class="headerlink" title="工作区和暂存区"></a>工作区和暂存区</h2><p>  git设计中有一些概念，了解这些概念对于深入学习git有很大的帮助。其中就有工作区<br>和暂存区。</p>
-<h3 id="工作区"><a href="#工作区" class="headerlink" title="工作区"></a>工作区</h3><p>  工作区就是创建的工作目录，这个目录下的所有文件都需要在git的管理之下。文件的创<br>建，修改，删除都会被git记录。</p>
-<h3 id="暂存区"><a href="#暂存区" class="headerlink" title="暂存区"></a>暂存区</h3><p>  另外一个就是.git。这个称为版本库。版本库里存了很多东西，其中一个就是暂存区，所<br>有的修改只有在提交到暂存区，才能被commit。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">位于分支 master</span><br><span class="line">要提交的变更：</span><br><span class="line">  （使用 &quot;git reset HEAD &lt;文件&gt;...&quot; 以取消暂存）</span><br><span class="line"></span><br><span class="line">	修改：     readme.txt</span><br><span class="line"></span><br><span class="line">未跟踪的文件:</span><br><span class="line">  （使用 &quot;git add &lt;文件&gt;...&quot; 以包含要提交的内容）</span><br><span class="line"></span><br><span class="line">	LICENSE</span><br></pre></td></tr></table></figure></p>
-<p>  git add 是将文件修改添加到暂存区<br>  git commit 是将暂存区的所有内存提交到当前分支上</p>
-<h2 id="管理修改"><a href="#管理修改" class="headerlink" title="管理修改"></a>管理修改</h2><p>  上一节提到暂存区和工作区，git管理的是修改，而不是文件文件。为什么这样说呢，实验<br>一下。<br>   原readme.txt中的内容：<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git is a version control tool</span><br><span class="line">git is so nice</span><br></pre></td></tr></table></figure></p>
-<p>   第一次修改后的内容：<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git is a version control tool</span><br><span class="line">git is so nice</span><br><span class="line">this is first test</span><br></pre></td></tr></table></figure></p>
-<p>   使用命令：<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">xxx:~/workplace/demo$ git add readme.txt</span><br><span class="line">xxx:~/workplace/demo$ sudo git commit -m &quot;first&quot;</span><br><span class="line">[master e76954f] first</span><br><span class="line">1 file changed, 3 insertions(+)</span><br><span class="line">create mode 100644 readme.txt</span><br><span class="line">xxx:~/workplace/demo$ git status</span><br><span class="line">位于分支 master</span><br><span class="line">无文件要提交，干净的工作区</span><br><span class="line">xxx:~/workplace/demo$ cat readme.txt</span><br><span class="line">git is a version control tool</span><br><span class="line">git is so nice</span><br><span class="line">this is first test</span><br></pre></td></tr></table></figure></p>
-<p>   第二次修改的内容：<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git is a version control tool</span><br><span class="line">git is so nice</span><br><span class="line">this is first test</span><br><span class="line">this is second test</span><br></pre></td></tr></table></figure></p>
-<p>   使用一下命令：<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">   xxx:~/workplace/demo$ sudo git commit -m &quot;test&quot;</span><br><span class="line">   位于分支 master</span><br><span class="line">   尚未暂存以备提交的变更：</span><br><span class="line">  （使用 &quot;git add &lt;文件&gt;...&quot; 更新要提交的内容）</span><br><span class="line">  （使用 &quot;git checkout -- &lt;文件&gt;...&quot; 丢弃工作区的改动）</span><br><span class="line"></span><br><span class="line">	修改：     readme.txt</span><br><span class="line"></span><br><span class="line">修改尚未加入提交（使用 &quot;git add&quot; 和/或 &quot;git commit -a&quot;）</span><br></pre></td></tr></table></figure></p>
-<p>   由上面执行结果可以，第二次的修改并未被提交。<br>   这也说明，只有将修改添加到暂存区才能进行后一步的提交。也能看出来git的确<br>是对修改进行管理的，只有当修改添加到暂存区，才能把修改提交到分支上。文件已经<br>被修改了，但是并不会被提交。</p>
-<h2 id="撤销修改"><a href="#撤销修改" class="headerlink" title="撤销修改"></a>撤销修改</h2><p>  上一次讲过git的时光魔法，利用git reset可以让文件回到某一状态。但是针对的<br>是提交后的。每次reset的标记也是commit id。<br>  还有一种状况需要考虑，就是在修改没有commit之前，如何让文件恢复到某一时刻的<br>状态。<br>  git checkout就是专门负责则这个功能的。<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">xxx:~/workplace/demo$ cat readme.txt</span><br><span class="line">git is a version control tool</span><br><span class="line">git is so nice</span><br><span class="line">this is first test</span><br><span class="line">this is second test</span><br><span class="line">this is modify.</span><br><span class="line">xxx:~/workplace/demo$ git checkout readme.txt</span><br><span class="line">xxx:~/workplace/demo$ cat readme.txt</span><br><span class="line">git is a version control tool</span><br><span class="line">git is so nice</span><br><span class="line">this is first test</span><br></pre></td></tr></table></figure></p>
-<p>  可以从上面的命令清楚的看到，git checkout命令就相当于撤回键一样，可以让修<br>该回到之前的一个状态。<br>还有一个需要考虑的是，如果你的修改已经被提交，那么需要使用reset来回到上一个<br>状态。</p>
-<h2 id="删除修改"><a href="#删除修改" class="headerlink" title="删除修改"></a>删除修改</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">xxx:~/workplace/demo$ rm readme.txt</span><br><span class="line">xxx:~/workplace/demo$ sudo git commit -m &quot;delete&quot;</span><br><span class="line">[master 94de890] delete</span><br><span class="line"> 1 file changed, 1 insertion(+)</span><br><span class="line">xxx:~/workplace/demo$</span><br></pre></td></tr></table></figure>
+        <h2 id="进程通信"><a href="#进程通信" class="headerlink" title="进程通信"></a>进程通信</h2><p>（1）一个进程如何把信息传递给另一个<br>（2）两个或多个进程的活动不会交叉<br>（3）正确的顺序</p>
 
       
     </div>
@@ -458,12 +446,12 @@
   <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
 
-  <p><span>本文标题:</span>git学习（二）</a></p>
+  <p><span>本文标题:</span>java对象</a></p>
   <p><span>文章作者:</span>learner66</a></p>
-  <p><span>发布时间:</span>2018年05月22日 - 19:29:06</p>
-  <p><span>最后更新:</span>2018年06月01日 - 15:40:49</p>
-  <p><span>原始链接:</span><a href="/2018/05/22/git-learning-2/" title="git学习（二）">https://learner66.github.io/2018/05/22/git-learning-2/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://learner66.github.io/2018/05/22/git-learning-2/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2018年06月01日 - 20:03:02</p>
+  <p><span>最后更新:</span>2018年07月09日 - 18:24:31</p>
+  <p><span>原始链接:</span><a href="/2018/06/01/java-object/" title="java对象">https://learner66.github.io/2018/06/01/java-object/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://learner66.github.io/2018/06/01/java-object/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -511,7 +499,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://learner66.github.io/2018/05/22/git-learning-2/" title="git学习（二）">https://learner66.github.io/2018/05/22/git-learning-2/</a>
+    <a href="https://learner66.github.io/2018/06/01/java-object/" title="java对象">https://learner66.github.io/2018/06/01/java-object/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -526,7 +514,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/git/" rel="tag"><i class="fa fa-tag"></i> git</a>
+            <a href="/tags/操作系统/" rel="tag"><i class="fa fa-tag"></i> 操作系统</a>
+          
+            <a href="/tags/进程通信/" rel="tag"><i class="fa fa-tag"></i> 进程通信</a>
           
         </div>
       
@@ -539,8 +529,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/22/git-learning-1/" rel="next" title="git学习（一）">
-                <i class="fa fa-chevron-left"></i> git学习（一）
+              <a href="/2018/06/01/os-process-communication/" rel="next" title="操作系统-进程通信">
+                <i class="fa fa-chevron-left"></i> 操作系统-进程通信
               </a>
             
           </div>
@@ -548,10 +538,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/30/os-process/" rel="prev" title="操作系统-进程">
-                操作系统-进程 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -694,7 +680,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#工作区和暂存区"><span class="nav-number">1.</span> <span class="nav-text">工作区和暂存区</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#工作区"><span class="nav-number">1.1.</span> <span class="nav-text">工作区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#暂存区"><span class="nav-number">1.2.</span> <span class="nav-text">暂存区</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#管理修改"><span class="nav-number">2.</span> <span class="nav-text">管理修改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#撤销修改"><span class="nav-number">3.</span> <span class="nav-text">撤销修改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除修改"><span class="nav-number">4.</span> <span class="nav-text">删除修改</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#进程通信"><span class="nav-number">1.</span> <span class="nav-text">进程通信</span></a></li></ol></div>
             
 
           </div>

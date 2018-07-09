@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[java对象]]></title>
+    <url>%2F2018%2F06%2F01%2Fjava-object%2F</url>
+    <content type="text"><![CDATA[进程通信（1）一个进程如何把信息传递给另一个（2）两个或多个进程的活动不会交叉（3）正确的顺序]]></content>
+      <categories>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>操作系统</tag>
+        <tag>进程通信</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[操作系统-进程通信]]></title>
     <url>%2F2018%2F06%2F01%2Fos-process-communication%2F</url>
     <content type="text"><![CDATA[进程通信（1）一个进程如何把信息传递给另一个（2）两个或多个进程的活动不会交叉（3）正确的顺序]]></content>
