@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://learner66.github.io/"/>
-  <updated>2018-07-10T02:07:55.067Z</updated>
+  <updated>2018-07-10T04:00:53.798Z</updated>
   <id>https://learner66.github.io/</id>
   
   <author>
@@ -21,13 +21,13 @@
     <link href="https://learner66.github.io/2018/07/10/Disk-IO/"/>
     <id>https://learner66.github.io/2018/07/10/Disk-IO/</id>
     <published>2018-07-10T02:05:57.000Z</published>
-    <updated>2018-07-10T02:07:55.067Z</updated>
+    <updated>2018-07-10T04:00:53.798Z</updated>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;磁盘IO的工作机制&quot;&gt;&lt;a href=&quot;#磁盘IO的工作机制&quot; class=&quot;headerlink&quot; title=&quot;磁盘IO的工作机制&quot;&gt;&lt;/a&gt;磁盘IO的工作机制&lt;/h2&gt;
+        &lt;h2 id=&quot;磁盘IO的工作机制&quot;&gt;&lt;a href=&quot;#磁盘IO的工作机制&quot; class=&quot;headerlink&quot; title=&quot;磁盘IO的工作机制&quot;&gt;&lt;/a&gt;磁盘IO的工作机制&lt;/h2&gt;&lt;p&gt;需要搞清的问题，磁盘IO怎么工作的，IO的控制方式有哪几种。&lt;br&gt;为什么需要对磁盘
       
     
     </summary>
