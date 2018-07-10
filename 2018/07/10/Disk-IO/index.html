@@ -102,7 +102,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/learner66/Res-Pic/master/disk-4.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/learner66/Res-Pic/master/disk-5.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/learner66/Res-Pic/master/disk-6.jpg">
-<meta property="og:updated_time" content="2018-07-10T07:43:14.256Z">
+<meta property="og:updated_time" content="2018-07-10T07:49:01.813Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="磁盘IO的工作机制">
 <meta name="twitter:description" content="磁盘IO的工作机制需要搞清的问题，磁盘IO怎么工作的，IO的控制方式有哪几种。为什么需要对磁盘IO进行探究，在web应用中，涉及到最多的就是数据的流通问题，无论是在本地机器上的数据流动还是在网络上的数据流通，都会涉及到IO操作，IO问题也成为应用系统的瓶颈问题，了解磁盘IO的工作机制有助于进一步理解复杂的web应用问题。 字节和字符这个问题的引入是来自java中的字符接口（reader,write">
@@ -348,7 +348,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-07-10T15:43:14+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-07-10T15:49:01+08:00">
                 2018-07-10
               </time>
             
@@ -398,7 +398,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,258
+                  2,360
                 </span>
               
 
@@ -447,7 +447,8 @@
 <h3 id="程序IO方式（PIO）"><a href="#程序IO方式（PIO）" class="headerlink" title="程序IO方式（PIO）"></a>程序IO方式（PIO）</h3><p>程序IO的方式是轮循，CPU首先向IO控制器发送一个读命令，IO控制器会设置自己的状态<br>字busy。之后CPU会一直轮询busy,当busy=0时，表示控制器已经把需要的字符读入到了<br>自己的寄存器中，CPU可以取走这个数据。这个过程看似没什么问题，但是这个过程CPU一<br>直在询问IO控制器的状态，导致CPU在IO控制器读数据的时间也不能去做其他的事情，很<br>明显会降低CPU的工作效率。<br><img src="https://raw.githubusercontent.com/learner66/Res-Pic/master/disk-4.jpg" alt="disk-4"></p>
 <h3 id="中断方式"><a href="#中断方式" class="headerlink" title="中断方式"></a>中断方式</h3><p>中断应该是比较熟悉的一个名词，现代计算机中都有中断系统。进程的切换，方法的调用和<br>退出都需要中断来协助完成，此时敲击键盘就是一个keyboard interrupt.<br>使用中断方式就不需要CPU一直处于轮询状态，因为IO控制器在读完数据后会给CPU一个中<br>段，让CPU来取数据，这样的话，CPU在其他时间就可以去做其他的任务。这样CPU得到解放<br>，效率会大大提升。<br><img src="https://raw.githubusercontent.com/learner66/Res-Pic/master/disk-5.jpg" alt="disk-5"></p>
 <h3 id="直接存储器访问DMA方式"><a href="#直接存储器访问DMA方式" class="headerlink" title="直接存储器访问DMA方式"></a>直接存储器访问DMA方式</h3><p>虽然中断方式已经解放了一部分CPU，但是中断方式每次只能读一个字节（具体可能看IO<br>控制器数据寄存器的大小，一般都是8bit，一个字节）。所以如果要读入一块数据，例如<br>要读取1K的数据，那么CPU仍然要进行1K次的干预。有没有什么办法让CPU读1K数据的时<br>侯只进行一次干预呢？<br>DMA就是一次读取一个数据块的。<br>先来看一个DMA控制器<br><img src="https://raw.githubusercontent.com/learner66/Res-Pic/master/disk-6.jpg" alt="disk-6"><br>当CPU要从磁盘读入一个数据块时，便向磁盘控制器发送一条读命令，该命令会被送到其中<br>的命令寄存器（CR）中。同时，还必须发送本次要将数据读入的内存起始目标地址，该地址<br>被送入内存地址寄存器（MAR）中，本次要读的数据的字（节）数则送入数据计数器（DC）中<br>，还需要将磁盘中的源地址直接送至DMA控制器的IO控制逻辑上。之后CPU就可以去处理其他<br>任务，数据的传送由DMA自己完成。<br>当DMA控制器已经从磁盘中读入一个字节的数据并送入数据寄存器（DR）中，再将该数据送到<br>内存中区，将DC内容减1,对MAR内容加1.继续传送，直到DC=0为止。</p>
-<h3 id="通道控制方式"><a href="#通道控制方式" class="headerlink" title="通道控制方式"></a>通道控制方式</h3>
+<h3 id="通道控制方式"><a href="#通道控制方式" class="headerlink" title="通道控制方式"></a>通道控制方式</h3><p>DMA虽然能够读取一个数据块，问题又出来了，读取多个数据块怎么办？通道方式其实是DMA<br>的加强版，它自己拥有通道程序，能够执行一系列通道指令。<br>它把对一个数据块的读写为单位进行中断变成对一组数据块的读写为单位进行中断，进一步<br>解放CPU。</p>
+
       
     </div>
     
@@ -467,7 +468,7 @@
   <p><span>本文标题:</span>磁盘IO的工作机制</a></p>
   <p><span>文章作者:</span>learner66</a></p>
   <p><span>发布时间:</span>2018年07月10日 - 10:05:57</p>
-  <p><span>最后更新:</span>2018年07月10日 - 15:43:14</p>
+  <p><span>最后更新:</span>2018年07月10日 - 15:49:01</p>
   <p><span>原始链接:</span><a href="/2018/07/10/Disk-IO/" title="磁盘IO的工作机制">https://learner66.github.io/2018/07/10/Disk-IO/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://learner66.github.io/2018/07/10/Disk-IO/"  aria-label="复制成功！"></i></span>
   </p>
