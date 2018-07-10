@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://learner66.github.io/"/>
-  <updated>2018-07-09T10:32:53.008Z</updated>
+  <updated>2018-07-10T02:07:55.067Z</updated>
   <id>https://learner66.github.io/</id>
   
   <author>
@@ -17,11 +17,40 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>java对象</title>
+    <title>磁盘IO的工作机制</title>
+    <link href="https://learner66.github.io/2018/07/10/Disk-IO/"/>
+    <id>https://learner66.github.io/2018/07/10/Disk-IO/</id>
+    <published>2018-07-10T02:05:57.000Z</published>
+    <updated>2018-07-10T02:07:55.067Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;磁盘IO的工作机制&quot;&gt;&lt;a href=&quot;#磁盘IO的工作机制&quot; class=&quot;headerlink&quot; title=&quot;磁盘IO的工作机制&quot;&gt;&lt;/a&gt;磁盘IO的工作机制&lt;/h2&gt;
+      
+    
+    </summary>
+    
+      <category term="操作系统" scheme="https://learner66.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+    
+      <category term="磁盘" scheme="https://learner66.github.io/tags/%E7%A3%81%E7%9B%98/"/>
+    
+      <category term="IO" scheme="https://learner66.github.io/tags/IO/"/>
+    
+      <category term="IO控制方式" scheme="https://learner66.github.io/tags/IO%E6%8E%A7%E5%88%B6%E6%96%B9%E5%BC%8F/"/>
+    
+      <category term="IO工作机制" scheme="https://learner66.github.io/tags/IO%E5%B7%A5%E4%BD%9C%E6%9C%BA%E5%88%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java对象的生存周期</title>
     <link href="https://learner66.github.io/2018/07/09/java-object/"/>
     <id>https://learner66.github.io/2018/07/09/java-object/</id>
     <published>2018-07-09T07:46:51.000Z</published>
-    <updated>2018-07-09T10:32:53.008Z</updated>
+    <updated>2018-07-09T12:59:34.509Z</updated>
     
     <summary type="html">
     

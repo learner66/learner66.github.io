@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[java对象]]></title>
+    <title><![CDATA[磁盘IO的工作机制]]></title>
+    <url>%2F2018%2F07%2F10%2FDisk-IO%2F</url>
+    <content type="text"><![CDATA[磁盘IO的工作机制]]></content>
+      <categories>
+        <category>操作系统</category>
+      </categories>
+      <tags>
+        <tag>磁盘</tag>
+        <tag>IO</tag>
+        <tag>IO控制方式</tag>
+        <tag>IO工作机制</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[java对象的生存周期]]></title>
     <url>%2F2018%2F07%2F09%2Fjava-object%2F</url>
-    <content type="text"><![CDATA[java对象的生存对于java对象的生存问题，需要考虑的是，java对象在哪生存，java对象生存时间，java对象回收问题。 java对象在哪生存java虚拟机对java内存区域有着很明确的划分。这个会有另外的文章来叙述，程序员最关心的两个内存区域就是栈和堆。这也是经常提及的两个内存区域。栈一般是用来存放局部变量的，在java中，局部变量是在方法中出现的。如图所示，调用的方法会被存储在栈中，当然，处在方法中的局部变量也会存储在栈中。并且先调用的方法会被压到栈底，图中，fun1是先被调用的。栈的用途很明确，用来存储调用的方法及方法中的局部变量。那么在java中，堆被设计用来专门存储对象的。当一个类被加载到内存，并且解析后。它的对象所占用的空间其实已经可以确定了，当使用new创建对象的时候，会在堆上为为其分配相应的空间。实例变量是类中所声明的属性，会随着对象一起存储到堆上。类变量会有另外的存储空间。栈中的局部变量和堆中的实例变量有什么关系？如果是原始类型的局部变量（除了String），它在栈上保存的是自己的真实值。但是如果是非原始类型的局部变量，那么它在栈上保存的是指向对象的引用，而不是对象本身。 java对象的生存时间上面提到，java中有两种变量，实例变量和局部变量。先来讨论一下这两种变量，局部变量的生存周期很明显，当方法被调入栈中，局部变量开始存在，当方法被调出栈，局部变量结束了它的一生。它是随方法调用而存在，随方法消失而消失。实例变量是随着对象创建而创建，随着对象的销毁而消失。这里并没有说明java对象的生存时间，当有引用指向java对象时，java对象就不会被垃圾回收器回收，但是如果没有引用指向java对象时，它很可能就被GC回收。如何判断java对象是否能被回收呢？一般的思路是可以为该对象的引用设置一个计数器，如果该计数器为0,说明没有引用指向该对象，那么该对象是可以回收的，但是这种方法不能很好的解决循环引用的问题。123456789101112131415public class ReferenceCountingGC&#123; public Object instance = null; private static final int _1MB = 1024 * 1024; private byte[] bigSize = new byte[2 * _1MB]; public static void testGC()&#123; ReferenceCountingGC objA = new ReferenceCountingGC(); ReferenceCountingGC objB = new ReferenceCountingGC(); objA.instance = objB; objB.instance = objA; objA = null; objB = null; system.gc(); &#125;&#125; 这里深入理解JVM中的一个例子，例子中objA和objB其实是相互引用着，但是，并不妨碍垃圾回收期对objA和objB的回收，所以引用计数法是存在一定的问题。java虚拟机采用的是可达性分析算法来判断一个对象是否可以被回收。首先GC Roots的对象作为起点，如果一个对象不能到达这些GC Roots，那么就可以判断这些对象是可以回收的。GC Roots:(1)虚拟机栈中引用的对象(2)方法区中静态属性引用的对象(3)方法区中常量引用的对象(4)本地方法栈中引用的对象[深入理解java虚拟机]]]></content>
+    <content type="text"><![CDATA[java对象的生存对于java对象的生存问题，需要考虑的是，java对象在哪生存，java对象生存时间，java对象回收问题。 java对象在哪生存java虚拟机对java内存区域有着很明确的划分。这个会有另外的文章来叙述，程序员最关心的两个内存区域就是栈和堆。这也是经常提及的两个内存区域。栈一般是用来存放局部变量的，在java中，局部变量是在方法中出现的。如图所示，调用的方法会被存储在栈中，当然，处在方法中的局部变量也会存储在栈中。并且先调用的方法会被压到栈底，图中，fun1是先被调用的。栈的用途很明确，用来存储调用的方法及方法中的局部变量。那么在java中，堆被设计用来专门存储对象的。当一个类被加载到内存，并且解析后。它的对象所占用的空间其实已经可以确定了，当使用new创建对象的时候，会在堆上为为其分配相应的空间。实例变量是类中所声明的属性，会随着对象一起存储到堆上。类变量会有另外的存储空间。栈中的局部变量和堆中的实例变量有什么关系？如果是原始类型的局部变量（除了String），它在栈上保存的是自己的真实值。但是如果是非原始类型的局部变量，那么它在栈上保存的是指向对象的引用，而不是对象本身。 java对象的生存时间上面提到，java中有两种变量，实例变量和局部变量。先来讨论一下这两种变量，局部变量的生存周期很明显，当方法被调入栈中，局部变量开始存在，当方法被调出栈，局部变量结束了它的一生。它是随方法调用而存在，随方法消失而消失。实例变量是随着对象创建而创建，随着对象的销毁而消失。这里并没有说明java对象的生存时间，当有引用指向java对象时，java对象就不会被垃圾回收器回收，但是如果没有引用指向java对象时，它很可能就被GC回收。如何判断java对象是否能被回收呢？一般的思路是可以为该对象的引用设置一个计数器，如果该计数器为0,说明没有引用指向该对象，那么该对象是可以回收的，但是这种方法不能很好的解决循环引用的问题。123456789101112131415public class ReferenceCountingGC&#123; public Object instance = null; private static final int _1MB = 1024 * 1024; private byte[] bigSize = new byte[2 * _1MB]; public static void testGC()&#123; ReferenceCountingGC objA = new ReferenceCountingGC(); ReferenceCountingGC objB = new ReferenceCountingGC(); objA.instance = objB; objB.instance = objA; objA = null; objB = null; system.gc(); &#125;&#125; 这里深入理解JVM中的一个例子，例子中objA和objB其实是相互引用着，但是，并不妨碍垃圾回收期对objA和objB的回收，所以引用计数法是存在一定的问题。java虚拟机采用的是可达性分析算法来判断一个对象是否可以被回收。首先GC Roots的对象作为起点，如果一个对象不能到达这些GC Roots，那么就可以判断这些对象是可以回收的。GC Roots:(1)虚拟机栈中引用的对象(2)方法区中静态属性引用的对象(3)方法区中常量引用的对象(4)本地方法栈中引用的对象[深入理解java虚拟机] java对象的回收]]></content>
       <categories>
         <category>java</category>
       </categories>
