@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://learner66.github.io/"/>
-  <updated>2018-07-10T11:43:39.363Z</updated>
+  <updated>2018-07-12T07:45:20.257Z</updated>
   <id>https://learner66.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>网络之TCP/UDP漫游</title>
+    <link href="https://learner66.github.io/2018/07/11/network-tcp-udp/"/>
+    <id>https://learner66.github.io/2018/07/11/network-tcp-udp/</id>
+    <published>2018-07-11T06:32:14.000Z</published>
+    <updated>2018-07-12T07:45:20.257Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;可靠传输的TCP&quot;&gt;&lt;a href=&quot;#可靠传输的TCP&quot; class=&quot;headerlink&quot; title=&quot;可靠传输的TCP&quot;&gt;&lt;/a&gt;可靠传输的TCP&lt;/h2&gt;&lt;p&gt;TCP的可靠传输靠什么保证的，TCP可靠传输面临什么问题，TCP的连接和断开。&lt;br&gt;TCP
+      
+    
+    </summary>
+    
+      <category term="计算机网络" scheme="https://learner66.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+      <category term="TCP" scheme="https://learner66.github.io/tags/TCP/"/>
+    
+      <category term="UDP" scheme="https://learner66.github.io/tags/UDP/"/>
+    
+  </entry>
   
   <entry>
     <title>磁盘IO的工作机制</title>

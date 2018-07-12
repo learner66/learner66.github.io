@@ -714,6 +714,214 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://learner66.github.io/2018/07/11/network-tcp-udp/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="learner66">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/timg.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="learner66的探索空间">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/11/network-tcp-udp/" itemprop="url">网络之TCP/UDP漫游</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-11T14:32:14+08:00">
+                2018-07-11
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-07-12T15:45:20+08:00">
+                2018-07-12
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/计算机网络/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机网络</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3,608
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  13
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="可靠传输的TCP"><a href="#可靠传输的TCP" class="headerlink" title="可靠传输的TCP"></a>可靠传输的TCP</h2><p>TCP的可靠传输靠什么保证的，TCP可靠传输面临什么问题，TCP的连接和断开。<br>TCP和UDP都是应用层之下的协议，都是用来提供端到端的传输服务。那么TCP<br>和UDP有什么不同。以上都是对TCP协议的一些问题，下面慢慢展开来说。</p>
+<h3 id="TCP是面向连接的"><a href="#TCP是面向连接的" class="headerlink" title="TCP是面向连接的"></a>TCP是面向连接的</h3><p>TCP是面向连接的，这个问题看到过很多次，每次都有过思考，连接代表什么，<br>是虚拟电路？这样理解的话，那UDP也在通信过程中建立了一个虚拟电路啊。<br>很明显，这样的解释并不合理。<br>那么该如何理解这个连接的意思呢。追本溯源，先看看一下TCP和UDP是怎么<br>定义的。<br>UDP：<br>  （1）udp是无连接的，发送数据之前不需要建立连接<br>  （2）udp使用尽最大努力交付，即不保证可靠交付，因此主机不需要维持<br>  复杂的连接状态表<br>  （3）udp是面向报文的，对应用层交下来的报文，添加首部就交付IP层。<br>TCP：<br>  （1）tcp是面向连接的<br>  （2）tcp连接是1对1的<br>  （3）tcp提供可靠交付的服务，通过TCP连接传送的数据，无差错，不丢失<br>  不重复，并且按序到达。<br>这里仔细思考一下，tcp可以让传输的数据有序，无差错，不丢失。如果直接<br>传输，可以保证达到这样效果吗？肯定不可以啊，这里双方都应该保存通信的<br>状态，哪些数据已经传输了，哪些数据丢失了，哪些数据还没有传输过来，这<br>都需要双方记录下来（为什么双方，因为tcp是全双工通信，可以作为接受端，<br>也可以作为发送端），如果数据已经传输了，发送方可以把数据从缓存中清除，<br>如果数据丢失了，数据丢失了，接收方要通知发送方重传。这些状态都是需要<br>保存的，对状态的保存就是TCP连接的含义。同样，UDP不需要保存这些状态<br>所以，UDP是无连接。（当下理解，有错再改）</p>
+<h3 id="TCP怎么建立连接"><a href="#TCP怎么建立连接" class="headerlink" title="TCP怎么建立连接"></a>TCP怎么建立连接</h3><p>那么根据上面的说法，其实建立连接就是对状态的初始化。生出序列号，同样<br>也有了确认号，并且数据包的大小，发送窗口的大小都在这是做一个初始化。<br>那么TCP怎么建立连接呢？<br>TCP建立连接一般经过三次握手，SYN标志位表示申请建立连接，FIN标志位<br>表示结束连接。<br>（1）客户端首先发送带有SYN的数据包给服务器端，并且给出自己的序列号。<br>（2）服务端收到客户端的数据包后，应该给出一个回应，包含确认号。表示<br>自己已经收到了客户端的连接请求，同时连接应该是双方都需要确认的，服务<br>端也发送一个带有SYN的数据包，给出自己的序列号，并且和回应放到一个数<br>据包中，如果能收到客户端的回应，说明双方的通信没有问题。<br>（3）客户端收到了服务端的回应，就知道了，服务端能够接收自己的数据包，<br>并且服务端能够正常发送数据包。这时，客户端给出回应。服务端收到后，表<br>示自己和客户端的通信可以正常进行，连接建立。之后可以正常通信。<br><img src="https://raw.githubusercontent.com/learner66/Res-Pic/master/network-1.jpg" alt="network-1"></p>
+<h4 id="为什么是三次握手"><a href="#为什么是三次握手" class="headerlink" title="为什么是三次握手"></a>为什么是三次握手</h4><p>因为三次握手已经可以确定双方能够正常通信，这也是能够确认双方能够正常<br>通信的最小次数。<br>比如，两个人电话交流。<br>A:喂，听得到吗？<br>B:我能听到，你能听到吗？<br>A:我也能听到。<br>三次交流才能说明双方的语音的发送和接收都没问题，如果是四次就多了，没<br>有必要，如果是两次呢？B不确定自己的通话对方能够听到。</p>
+<h4 id="为什么不是两次握手"><a href="#为什么不是两次握手" class="headerlink" title="为什么不是两次握手"></a>为什么不是两次握手</h4><p>网络环境是复杂的，如果发送端第一次发送的连接请求遇到网络拥塞，超过了<br>重传时间还没收到回应。发送端会重新发送一个连接请求来建立连接，这个连<br>接走了一个比较畅通的道路，很快就建立建立，并且完成来通信。但是第一个<br>连接并没有丢失，而是延时到达了，当它到达的时候，又会建立一次连接，但<br>是这次连接其实已经过时了，只会平白浪费资源。<br>如果是三次握手，即使第一个连接延时到达，当它请求连接的时候，因为客户<br>端已经知道连接已经建立了，会拒绝这次连接。</p>
+<h3 id="TCP怎么传输数据"><a href="#TCP怎么传输数据" class="headerlink" title="TCP怎么传输数据"></a>TCP怎么传输数据</h3><p>经过上面的一系列步骤，连接终于建立完成了。<br>在阐述TCP怎么传输数据之前，先来熟悉几个标志位，这几个标志位对于理解<br>TCP是如何传输数据至关重要。<br>（1）Seq:序号，用于表示本次发送报文段的第一个字节的序号。<br>（2）Ack:确认号，用于表示期望下一次接受报文段的第一个字节的序号。<br>（3）len:本次报文段的长度，seq+len=Ack<br>为了确保每个数据都能被接受到，就需要对每次的传输进行确认。每发送<br>一个数据报就进行一次确认。<br><img src="https://raw.githubusercontent.com/learner66/Res-Pic/master/network-2.jpg" alt="network-2"></p>
+<h3 id="出现丢包怎么办-停止等待协议"><a href="#出现丢包怎么办-停止等待协议" class="headerlink" title="出现丢包怎么办|停止等待协议"></a>出现丢包怎么办|停止等待协议</h3><p>上面的设想是好的，但是网络环境并不是这样的，数据会出现延时或者丢包<br>如果出现丢包问题该怎么办?<br>最简单的方法就是发送方确定上一次数据包被接收方收到后，才进行下一次<br>发送。首先，发送方在发送完数据后给自己一个定时器，如果超过定时时间<br>还没有收到确认，就重新发送一次。<br>没有收到确认的情况有两种，一种是自己的数据丢失或者延迟，二是因为确<br>任丢失或者延迟。<br>（1）对于发送发放方数据丢失，接收方重新接受发送方重传的数据<br>（2）对于数据延迟，接收方应该丢弃重复的数据，但是还是要发送确认<br>（3）对于确认丢失，发送方重传，接收方丢失重复数据，但是要发送确认<br>（4）对于确认延迟，发送方丢失重复确认就可以了<br>停止等待<br><img src="https://raw.githubusercontent.com/learner66/Res-Pic/master/network-3.jpg" alt="network-3"><br>确认丢失<br><img src="https://raw.githubusercontent.com/learner66/Res-Pic/master/network-4.jpg" alt="network-4"><br>确认延迟<br><img src="https://raw.githubusercontent.com/learner66/Res-Pic/master/network-5.jpg" alt="network-5"></p>
+<h3 id="每次只确认一个，效率太低怎么办-滑动窗口协议（ARQ）"><a href="#每次只确认一个，效率太低怎么办-滑动窗口协议（ARQ）" class="headerlink" title="每次只确认一个，效率太低怎么办|滑动窗口协议（ARQ）"></a>每次只确认一个，效率太低怎么办|滑动窗口协议（ARQ）</h3><p>每次只发送一个数据包，然后傻傻地等着确认，百无聊赖。珍贵的时间就这样<br>被消磨了，如果能在等待的时候接着发送数据，想必是极好的。<br>其实滑动窗口协议就是这样的一个设计初衷，它开始规定一个了窗口大小，可以<br>连续发送数据包，只要不超过窗口大小就可以。另外，再收到接收方的确认后。<br>窗口还可以进行滑动。<br><img src="https://raw.githubusercontent.com/learner66/Res-Pic/master/network-6.jpg" alt="network-6"></p>
+<h3 id="滑动窗口协议下的确认机制"><a href="#滑动窗口协议下的确认机制" class="headerlink" title="滑动窗口协议下的确认机制"></a>滑动窗口协议下的确认机制</h3><p>现在，有了滑动窗口协议，一次可以发送多个数据包，但是接收方的确认机制<br>是怎么样的呢？是每发一次进行一次确认，还是会累计到一次的次数后进行确<br>认？<br>滑动窗口协议规定，发送方每收到一个确认，就把发送窗口向前滑动一个分组<br>的位置，但是接收方一般都是采用累计确认的方式，也就是说，不用对每一个<br>分组都发送一个确认，可以在几个分组接受后，对按序到达的最后一个分组进<br>性确认即可。累计确认优缺点都很明显，不用每一次都发送一个确认，这很<br>明显节省了带宽。但是如果出现丢包，那么在这个包后面发送的数据要重新<br>发送一次。</p>
+<h4 id="选择确认SACK"><a href="#选择确认SACK" class="headerlink" title="选择确认SACK"></a>选择确认SACK</h4><p>上面所说的确认机制在丢包的时候可能要重传已经发送过的数据，那么能不<br>不能只重传丢包的数据呢？TCP给出了一个解决方案，就是选择确认，接受<br>方将接收到的数据边界发给发送方，发送方能够推算出丢的包。但是由于TCP<br>首部的option只有40个字节，每个边界都需要4个字节（32bit），所有<br>总共可以报告4个已经接受到分组的边界。另外8个字节还需要对SACK做说明。<br>但是SACK文档并没有说明接收方如果设置SACK，所以一般的选择还是重传<br>丢包之后所有的数据包。</p>
+<h3 id="超时重传的时间确定"><a href="#超时重传的时间确定" class="headerlink" title="超时重传的时间确定"></a>超时重传的时间确定</h3><p>超时重传的概念很简单，但是如何确定超时重传的时间呢？计算机网络是分组<br>交换的，有可能会选择较拥挤的路线，也有可能选择较通畅的路线。如果把重<br>传时间设置过小，可能会造成不必要的重传。如果超时重传的时间设置的过大，<br>又可能使网络空闲的时间过大，降低了传输效率。<br>TCP采用的是一种自适应的算法，它记录一个报文段发出的时间，以及收到相应<br>确认的时间。这两个时间差就是报文段的往返时间RTT。TCP保留了RTT的一个<br>加权平均往返时间RTTs.<br>  new RTTs = (1-a)×（old RTTs） + a×（new RTT）<br>  first RTTs = first RTT<br>  a的推荐值为0.125<br>RTTd是RTT的加权平均值<br>  new RTTd = （1-b）× （old RTTd）+ b × abs（RTTs - new RTT）<br>  first RTTd = half of fisrt RTT<br>  b的推荐值是0.25<br> RTO = RTTs + 4 × RTTd</p>
+<h3 id="TCP流量控制和拥塞控制"><a href="#TCP流量控制和拥塞控制" class="headerlink" title="TCP流量控制和拥塞控制"></a>TCP流量控制和拥塞控制</h3><p>TCP如何在复杂的网络环境中进行资源的最大利用，并且又不会增加网络的负担，<br>如果根据网络环境来选择自己的发送窗口的大小。</p>
+<h4 id="发送窗口大小的制约因素"><a href="#发送窗口大小的制约因素" class="headerlink" title="发送窗口大小的制约因素"></a>发送窗口大小的制约因素</h4><p>发送窗口肯定不是无限大的，有两个因素在制约着它，一个是接收方的接受<br>窗口，如果接收方的数据还在处理，没有多余的空间来存放发送的分组，那么<br>发送的数据就会被丢弃。所以发送窗口的大小要有接收方的接收窗口制约，不<br>能大于接收方的窗口大小。另外一个就是网络因素，如果网络出现拥塞，应该<br>适当的减小发送方的窗口，不然只会使得网络环境更加拥塞。<br>size(发送窗口) &lt; min(size(拥塞窗口，size(接收窗口))</p>
+<h3 id="慢启动和拥塞避免"><a href="#慢启动和拥塞避免" class="headerlink" title="慢启动和拥塞避免"></a>慢启动和拥塞避免</h3><p>在TCP刚连接开始，本机是不知道网络环境是怎么样的，不知道当前网络环境<br>是拥塞还是畅通。所以本机只能谨慎向网络中发送数据，先将拥塞窗口设置为<br>2(RFC推荐MUST be less than or equal to 2*SMSS bytes and<br>MUST NOT be more than 2 segments.)，然后发送2个数据包后会收到<br>2个确认，把拥塞窗口设置为2+2;然后下一次可以连续发送4个数据包，以此<br>类推，当拥塞窗口到达慢启动阈值的时候或者侦测到拥塞时，慢启动就结束了。</p>
+<h4 id="慢启动阈值"><a href="#慢启动阈值" class="headerlink" title="慢启动阈值"></a>慢启动阈值</h4><p>初始的慢启动阈值可以是任意值，启动慢启动算法，当侦测到网络拥塞时，就<br>可以将慢启动阈值设置为发生拥塞时发送窗口的1/2.之后，只要发生拥塞，就<br>用上面的方式设置慢启动阈值。</p>
+<h4 id="拥塞侦测"><a href="#拥塞侦测" class="headerlink" title="拥塞侦测"></a>拥塞侦测</h4><p>在TCP连接中，只要发送的数据超时没有收到确认，就认为网络发生了拥塞。</p>
+<p>如果拥塞窗口到达了慢启动阈值，那么接下来就使用拥塞避免算法，在每个<br>RTT收到确认后会让拥塞窗口增加一个MSS，直到发生拥塞，拥塞窗口重新设置<br>为一个比较小的值，继续慢启动算法。<br><img src="https://raw.githubusercontent.com/learner66/Res-Pic/master/network-7.jpg" alt="network-7"></p>
+<h3 id="快重传与快恢复"><a href="#快重传与快恢复" class="headerlink" title="快重传与快恢复"></a>快重传与快恢复</h3><p>快重传是在接收方意识到对方丢包，自己收到了一个乱序的数据包，自己主动<br>发送多次相同的确认，让发送方尽早知道自己丢包了，然后把丢失的数据包发送<br>过来，而不是等到重传计时器时间到了再重传。一般是接收方收到乱序的数据<br>后连续发送三个确认给发送方，发送方连续收到三个重复确认就需要重传丢失<br>的包。<br>但是既然能够连续收到三个重复确认，说明网络环境并没有那么糟糕，不然应<br>该会出现丢包问题，不可能收到三个重复确认。这时候使用慢启动就显得不是<br>那么合理，所有利用快恢复来解决这个问题。<br>当方法方连续收到三个重复确认，就把慢启动阈值设置原来阈值的1/2,并且这<br>拥塞窗口并不是直接设置为1或者2这么小的值，而是也设置为原阈值的1/2,<br>并且之后使用拥塞避免算法。<br>在采用快恢复算法的时候，只有在TCP连接建立时和网络出现超时重传时才使<br>用慢启动算法。<br><img src="https://raw.githubusercontent.com/learner66/Res-Pic/master/network-8.jpg" alt="network-8"></p>
+<h3 id="TCP怎么终止连接"><a href="#TCP怎么终止连接" class="headerlink" title="TCP怎么终止连接"></a>TCP怎么终止连接</h3><p>TCP终止连接称为四次挥手。<br>（1）想要结束连接的一方发送带有FIN的数据包<br>（2）另一方接收到FIN数据包后就发送一个确认。<br>（3）另一个此时也发送一个FIN数据包<br>（4）该机接收到FIN数据包后，给出一个确认，这时候连接完全断开。<br>关于TCP连接和终止连接的问题还有更深入的细节需要讨论，会在其他文章中讨论。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    <div>
+      
+    </div>
+    <div>
+      
+    </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-categories" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://learner66.github.io/2018/07/10/Disk-IO/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1934,7 +2142,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1945,7 +2153,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1956,7 +2164,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
